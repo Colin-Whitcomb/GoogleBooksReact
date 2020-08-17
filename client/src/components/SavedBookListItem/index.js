@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { useBookContext, } from "../../utils/GlobalState"
-// import { SET_CURRENT_BOOK } from "../../utils/action"
+import { SET_CURRENT_BOOK } from "../../utils/action"
 import Col from "../Col"
 import Row from "../Row"
 // import API from '../../utils/API'
@@ -12,6 +12,14 @@ function savedBookListItem({ book }) {
   
     const [state, dispatch] = useBookContext();
 
+    const handleView = (author, title, description) => {
+        // event.preventDefault();
+        console.log(author, title, description);
+        const currentBook = {title: title, author: author, description: description, }
+        dispatch({type: SET_CURRENT_BOOK, book: currentBook })
+        console.log(currentBook);
+    }
+
 
     if (book.description) {
         return (
@@ -21,9 +29,11 @@ function savedBookListItem({ book }) {
                     <p className="text-center mt-3">{book.title}</p>
                     <p className="text-center">{book.author.join(",  ")}</p>
                     {/* <p className="text-center">{book.description}</p> */}
+                    <button type="button ml-2" className="btn btn-success" onClick={event => handleView(book.authors, book.title, book.description)}>View</button>
+                    {'      '}
                 </Col>
                 <Col columns="col-sm-4 col-md-4 col-lg-4 book-item">
-                    {/* <img className="list-img" src={book.imageLinks.smallThumbnail} /> */}
+                    <img className="list-img" src={book.image} />
 
                 </Col>
                 </Row>
