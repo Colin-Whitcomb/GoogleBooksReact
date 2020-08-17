@@ -8,8 +8,8 @@ import API from '../../utils/API'
 
 function BookListItem({ book }) {
     console.log(book);
-    const currentBookTitle = useRef(null);
-    const currentBookAuthor = useRef(null);
+    // const currentBookTitle = useRef(null);
+    // const currentBookAuthor = useRef(null);
     const [state, dispatch] = useBookContext();
 
     const handleView = (author, title, description) => {
