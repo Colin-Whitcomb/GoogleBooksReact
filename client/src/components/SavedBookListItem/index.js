@@ -1,9 +1,9 @@
 import React, { useRef } from 'react'
 import { useBookContext, } from "../../utils/GlobalState"
-import { SET_CURRENT_BOOK } from "../../utils/action"
+import { SET_CURRENT_BOOK, UPDATE_BOOKS } from "../../utils/action"
 import Col from "../Col"
 import Row from "../Row"
-// import API from '../../utils/API'
+import API from "../../utils/API"
 
 
 
@@ -20,6 +20,14 @@ function savedBookListItem({ book }) {
         console.log(currentBook);
     }
 
+    const handleDelete = (id) => {
+        console.log('delete called');
+        API.deleteBook(id)
+        .then(res => dispatch({ type: UPDATE_BOOKS, books: res.data }))
+        .catch(err => console.log(err));
+        console.log(state.books);
+    }
+
 
     if (book.description) {
         return (
@@ -28,12 +36,15 @@ function savedBookListItem({ book }) {
                 <Col columns="col-sm-8 col-md-8 col-lg-8 book-item">
                     <p className="text-center mt-3">{book.title}</p>
                     <p className="text-center">{book.author.join(",  ")}</p>
+                    <p>{book._id}</p>
                     {/* <p className="text-center">{book.description}</p> */}
                     <button type="button ml-2" className="btn btn-success" onClick={event => handleView(book.authors, book.title, book.description)}>View</button>
                     {'      '}
+                    <button type="button ml-2" className="btn btn-success" onClick={event => handleDelete(book._id)}>Delete</button>
                 </Col>
                 <Col columns="col-sm-4 col-md-4 col-lg-4 book-item">
                     <img className="list-img" src={book.image} />
+
 
                 </Col>
                 </Row>
