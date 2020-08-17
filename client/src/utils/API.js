@@ -2,10 +2,12 @@ import axios from "axios"
 
 export default {
     getBooks() {
+        console.log('get books called');
         return axios.get("/api/books")
     },
 
     getBook(id) {
+        console.log('get book called');
         return axios.get("/api/books/" + id)
     },
 
