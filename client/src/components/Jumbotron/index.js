@@ -20,7 +20,7 @@ function Jumbotron() {
             <h4 className="text-center display-4">{state.currentBook ? state.currentBook.title : "React Google Books Search"}</h4>
             <p className="text-center lead">{state.currentBook ? state.currentBook.author : "Search for and Save Books of Interest"}</p>
             <p className="text-center lead">{state.currentBook ? state.currentBook.description : ""}</p>
-            <button className="btn btn-danger float-right" onClick={event => handleClear()}>{state.currentBook ? "X" : ""}</button>
+            <button className="btn btn-danger float-right" onClick={event => handleClear()}>X</button>
         </div>
 
     )

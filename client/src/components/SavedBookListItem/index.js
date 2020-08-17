@@ -41,7 +41,6 @@ function savedBookListItem({ book }) {
                 <Col columns="col-sm-8 col-md-8 col-lg-8 book-item">
                     <h4 className="text-center mt-3">{book.title}</h4>
                     <p className="text-center">Written by: {book.author.join(",  ")}</p>
-                    <br/>
                     {/* <p className="text-center">{book.description}</p> */}
                     <button type="button ml-2" className="btn btn-success" onClick={event => handleView(book.authors, book.title, book.description)}>View</button>
                     {'      '}

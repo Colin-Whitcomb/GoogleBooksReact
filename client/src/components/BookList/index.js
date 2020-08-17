@@ -48,7 +48,7 @@ function BookListItem({ book }) {
                 <Row>
                 <Col columns="col-sm-8 col-md-8 col-lg-8 book-item">
                     <p className="text-center mt-3">{book.title}</p>
-                    <p className="text-center">{book.authors.join(",  ")}</p>
+                    <p className="text-center">Written by: {book.authors.join(",  ")}</p>
                     {/* <p className="text-center">{book.description}</p> */}
                     <button type="button ml-2" className="btn btn-success" onClick={event => handleView(book.authors, book.title, book.description)}>View</button>
                     {'      '}
