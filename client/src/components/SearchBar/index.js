@@ -10,7 +10,8 @@ function SearchBar() {
     const searchQuery = useRef()
 
     const handleSearch = event => {
-        event.preventDefault()
+        event.preventDefault(); 
+        console.log("handleSearch called");
         API.searchBooks(searchQuery.current.value).then(response => {
             searchQuery.current.value = ""
             const books = []

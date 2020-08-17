@@ -15,6 +15,7 @@ module.exports = {
     },
 
     create(req, res) {
+        console.log('create init');
         db.Book.create(req.body)
         .then(data => res.json(data))
         .catch(err => console.log(err))

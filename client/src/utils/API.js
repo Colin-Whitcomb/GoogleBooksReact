@@ -10,6 +10,8 @@ export default {
     },
 
     saveBook(bookObj) {
+        console.log("saveBook called");
+        console.log(bookObj);
         return axios.post("/api/books", bookObj)
     },
 
@@ -18,6 +20,7 @@ export default {
     },
 
     searchBooks(title) {
+        console.log("searchBooks called");
         return axios.get("/google/newbooks/" + title)
     }
 }
