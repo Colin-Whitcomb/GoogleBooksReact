@@ -1,11 +1,18 @@
 import React from 'react'
 import { useBookContext } from "../../utils/GlobalState"
+import { SET_CURRENT_BOOK } from "../../utils/action"
 
 function Jumbotron() {
 
     const [state, dispatch] = useBookContext()
 
-    
+    const handleClear = () => {
+        const currentBook = {title: "React Google Books Search", author: "Search for and Save Books of Interest"}
+        dispatch({type: SET_CURRENT_BOOK, book: currentBook })
+        console.log(currentBook);
+    }
+
+
 
     return (
 
@@ -13,7 +20,7 @@ function Jumbotron() {
             <h4 className="text-center display-4">{state.currentBook ? state.currentBook.title : "React Google Books Search"}</h4>
             <p className="text-center lead">{state.currentBook ? state.currentBook.author : "Search for and Save Books of Interest"}</p>
             <p className="text-center lead">{state.currentBook ? state.currentBook.description : ""}</p>
-            <img className="list-img" src={state.currentBook ? state.currentBook.image : ""} />
+            <button className="btn btn-danger float-right" onClick={event => handleClear()}>{state.currentBook ? "X" : ""}</button>
         </div>
 
     )

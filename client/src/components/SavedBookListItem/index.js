@@ -39,9 +39,9 @@ function savedBookListItem({ book }) {
             <Col columns="col-sm-6 col-md-6 col-lg-6 p-4">
                 <Row>
                 <Col columns="col-sm-8 col-md-8 col-lg-8 book-item">
-                    <p className="text-center mt-3">{book.title}</p>
-                    <p className="text-center">{book.author.join(",  ")}</p>
-                    <p>{book._id}</p>
+                    <h4 className="text-center mt-3">{book.title}</h4>
+                    <p className="text-center">Written by: {book.author.join(",  ")}</p>
+                    <br/>
                     {/* <p className="text-center">{book.description}</p> */}
                     <button type="button ml-2" className="btn btn-success" onClick={event => handleView(book.authors, book.title, book.description)}>View</button>
                     {'      '}
@@ -49,7 +49,6 @@ function savedBookListItem({ book }) {
                 </Col>
                 <Col columns="col-sm-4 col-md-4 col-lg-4 book-item">
                     <img className="list-img" src={book.image} />
-
 
                 </Col>
                 </Row>

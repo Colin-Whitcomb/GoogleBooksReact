@@ -23,7 +23,6 @@ const SavedBookList = () => {
 
     return (
         <div>
-            <button onClick={() => useEffect()}>Hello</button>
             <Row attributes="divider-row">
                 {state.books.map(book => {
                     return <SavedBookListItem book={book} />
