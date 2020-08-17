@@ -22,12 +22,17 @@ function savedBookListItem({ book }) {
 
     const handleDelete = (id) => {
         console.log('delete called');
-        API.deleteBook(id)
-        .then(res => dispatch({ type: UPDATE_BOOKS, books: res.data }))
-        .catch(err => console.log(err));
-        console.log(state.books);
+        API.deleteBook(id).then(getSavedBooks())
     }
 
+    const getSavedBooks = () => {
+        // console.log('useEff called');
+        API.getBooks()
+          .then(res => dispatch({ type: UPDATE_BOOKS, books: res.data }))
+          .catch(err => console.log(err));
+          console.log(state.books);
+          window.location.reload();
+      }
 
     if (book.description) {
         return (
