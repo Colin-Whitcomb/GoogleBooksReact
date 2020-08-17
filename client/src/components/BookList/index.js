@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './style.css'
-import { useBookContext } from "../../utils/GlobalState"
+import { useBookContext, } from "../../utils/GlobalState"
+import { SET_CURRENT_BOOK } from "../../utils/action"
 import Col from "../Col"
 import Row from "../Row"
 
 function BookListItem({ book }) {
+    console.log(book);
+    const currentBookTitle = useRef(null);
+    const currentBookAuthor = useRef(null);
+    const [state, dispatch] = useBookContext();
+
+    const handleView = (author, title) => {
+        // event.preventDefault();
+        console.log(author, title);
+        const currentBook = {title: title, author: author }
+        dispatch({type: SET_CURRENT_BOOK, book: currentBook })
+        console.log(currentBook);
+    }
+
 
     if (book.description) {
         return (
@@ -13,6 +27,8 @@ function BookListItem({ book }) {
                 <Col columns="col-sm-8 col-md-8 col-lg-8 book-item">
                     <p className="text-center mt-3">{book.title}</p>
                     <p className="text-center">{book.authors.join(",  ")}</p>
+                    {/* <p className="text-center">{book.description}</p> */}
+                    <button type="button ml-2" className="btn btn-success" data-title={book.title} data-author={book.author} onClick={event => handleView(book.authors, book.title)}>View</button>
                 </Col>
                 <Col columns="col-sm-4 col-md-4 col-lg-4 book-item">
                     <img className="list-img" src={book.imageLinks.smallThumbnail} />
