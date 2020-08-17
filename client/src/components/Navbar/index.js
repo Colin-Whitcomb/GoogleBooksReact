@@ -1,17 +1,38 @@
 import React from 'react';
-import { useBookContext } from "../../utils/GlobalState"
+import { useBookContext } from "../../utils/GlobalState";
+import { Link } from 'react-router-dom';
 
 function Navbar() {
 
     const [state, dispatch] = useBookContext()
 
     return (
-    <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Search</a>
-        <a class="navbar-brand" href="#">Saved</a>
-        </nav>
-      </div>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div>
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link
+                to="/"
+                className={
+                  window.location.pathname === "/" || window.location.pathname === "/home"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+              >
+                Search
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/signup"
+                className={window.location.pathname === "/signup" ? "nav-link active" : "nav-link"}
+              >
+                Sign Up
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
     )
 }
 
