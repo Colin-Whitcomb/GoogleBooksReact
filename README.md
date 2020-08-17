@@ -33,8 +33,20 @@ Understanding how to implement useContext and Providers with a React App can avo
 - Visual Studio Code
 - Git / GitHub / Heroku
 
-## Contact
+## Personal Contact
 
 * [Colin Whitcomb](https://github.com/Colin-Whitcomb)
 * [LinkedIn](https://www.linkedin.com/in/colin-whitcomb-b808301a6/)
 * [Portfolio](https://pacific-sea-84511.herokuapp.com//)
+
+### Additional Contributors
+
+
+Joel Mathen [GitHub](https://github.com/crackedsnowboard) | [LinkedIn](https://www.linkedin.com/in/joel-mathen/) | [Portfolio](https://crackedsnowboard.github.io/portfolio-highlights/)
+
+
+Samuel Levi Barrow [GitHub](https://github.com/sbarrow825) | [LinkedIn](https://www.linkedin.com/in/sam-barrow/) | [Portfolio](https://sbarrow825.github.io/Unit-02-CSS-and-Bootstrap-Homework-Responsive-Portfolio/)
+
+Gabe Sucich [GitHub](https://github.com/GabeSucich/) | [LinkedIn](https://www.linkedin.com/in/gabriel-sucich-6a28a71a8/) | [Portfolio](https://gabesucich.github.io/Portfolio2/)
+
+
