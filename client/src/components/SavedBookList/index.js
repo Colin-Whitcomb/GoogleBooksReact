@@ -14,11 +14,11 @@ const SavedBookList = () => {
     const [state, dispatch] = useBookContext();
 
     const getSavedBooks = () => {
-        console.log('useEff called');
+        console.log('getSavedBooks called');
         API.getBooks()
           .then(res => dispatch({ type: UPDATE_BOOKS, books: res.data }))
           .catch(err => console.log(err));
-          console.log(state.books);
+          console.log("state.books = " + state.books);
       }
 
     return (

@@ -3,6 +3,7 @@ const db = require("../models")
 module.exports = {
 
     findAll: function(req, res) {
+        console.log('findAll called');
         db.Book.find()
             .then(data => res.json(data))
             .catch(err => console.log(err))
