@@ -26,7 +26,7 @@ function savedBookListItem({ book }) {
     }
 
     const getSavedBooks = () => {
-        // console.log('useEff called');
+        console.log('getSaved Bools called');
         API.getBooks()
           .then(res => dispatch({ type: UPDATE_BOOKS, books: res.data }))
           .catch(err => console.log(err));
